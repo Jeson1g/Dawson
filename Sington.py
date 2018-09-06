@@ -1,4 +1,5 @@
 class Singleclass(object):
+    """单例模式"""
 
     def __init__(self,num):
         self.num = num
