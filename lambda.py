@@ -12,5 +12,5 @@ def multipliers():
 
 print ([m(2) for m in multipliers()] )
 """
-[6, 6, 6, 6]
+[0, 2, 4, 6]
 """
