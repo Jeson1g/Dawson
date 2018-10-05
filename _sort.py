@@ -12,8 +12,23 @@ def bubble_sort(a_list):
 
     return a_list
 
+
+def select_sort(a_list):
+    """选择排序"""
+    n = len(a_list)
+    for j in range(n - 1):
+        min_index = j
+        for i in range(j + 1, n):
+            if a_list[i] < a_list[min_index]:
+                min_index = i
+        if 0 != min_index:
+            a_list[j], a_list[min_index] = a_list[min_index], a_list[j]
+
+    return a_list
+
+
 if __name__ == '__main__':
     a_list = [4, 88, 1, 2, 0, 78]
     print(a_list)
-    new_list = bubble_sort(a_list)
-    print(new_list)
+    select_sort(a_list)
+    print(a_list)
