@@ -27,8 +27,17 @@ def select_sort(a_list):
     return a_list
 
 
+def insert_sort(a_list):
+    """插入排序"""
+    n = len(a_list)
+    for j in range(n):
+        for i in range(j, 0, -1):
+            if a_list[i] < a_list[i - 1]:
+                a_list[i], a_list[i - 1] = a_list[i - 1], a_list[i]
+
+
 if __name__ == '__main__':
     a_list = [4, 88, 1, 2, 0, 78]
     print(a_list)
-    select_sort(a_list)
+    insert_sort(a_list)
     print(a_list)
