@@ -1,3 +1,8 @@
+def swop(li, i):
+    """交换两个变量的值"""
+    li[i], li[i + 1] = li[i + 1], li[i]
+
+
 def bubble_sort(a_list):
     """冒泡排序"""
     n = len(a_list)
@@ -5,7 +10,22 @@ def bubble_sort(a_list):
         count = 0
         for j in range(n - 1 - i):
             if a_list[j] > a_list[j + 1]:
-                a_list[j], a_list[j + 1] = a_list[j + 1], a_list[j]
+                swop(a_list, j)
+            count += 1
+        if 0 == count:
+            break
+
+    return a_list
+
+
+def bubble_sorts(a_list):
+    """冒泡排序2"""
+    n = len(a_list)
+    for i in range(n - 1, 0, -1):
+        count = 0
+        for j in range(i):
+            if a_list[j] > a_list[j + 1]:
+                swop(a_list, j)
             count += 1
         if 0 == count:
             break
@@ -39,6 +59,5 @@ def insert_sort(a_list):
 if __name__ == '__main__':
     a_list = [4, 88, 1, 2, 0, 78]
     print(a_list)
-    insert_sort(a_list)
+    bubble_sort(a_list)
     print(a_list)
-
