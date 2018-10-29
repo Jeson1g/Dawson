@@ -41,7 +41,7 @@ def select_sort(li):
         for i in range(j + 1, n):
             if li[i] < li[min_index]:
                 min_index = i
-        if 0 != min_index:
+        if min_index != j:
             swap(li, j, min_index)
 
     return li
