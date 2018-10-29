@@ -1,6 +1,6 @@
-def swap(li, i):
+def swap(li, i, j):
     """交换两个变量的值"""
-    li[i], li[i + 1] = li[i + 1], li[i]
+    li[i], li[j] = li[j], li[i]
 
 
 def bubble_sort(li):
@@ -10,12 +10,12 @@ def bubble_sort(li):
         count = 0
         for j in range(n - 1 - i):
             if li[j] > li[j + 1]:
-                swap(li, j)
+                swap(li, j, j + 1)
             count += 1
         if 0 == count:
             break
 
-    return a_list
+    return li
 
 
 def bubble_sorts(li):
@@ -25,12 +25,12 @@ def bubble_sorts(li):
         count = 0
         for j in range(i):
             if li[j] > li[j + 1]:
-                swap(li, j)
+                swap(li, j, j + 1)
             count += 1
         if 0 == count:
             break
 
-    return a_list
+    return li
 
 
 def select_sort(li):
@@ -42,9 +42,9 @@ def select_sort(li):
             if li[i] < li[min_index]:
                 min_index = i
         if 0 != min_index:
-            li[j], li[min_index] = li[min_index], li[j]
+            swap(li, j, min_index)
 
-    return a_list
+    return li
 
 
 def insert_sort(li):
@@ -53,11 +53,11 @@ def insert_sort(li):
     for j in range(n):
         for i in range(j, 0, -1):
             if li[i] < li[i - 1]:
-                li[i], li[i - 1] = li[i - 1], li[i]
+                swap(li, i, i - 1)
 
 
 if __name__ == '__main__':
-    a_list = [4, 88, 1, 2, 0, 78]
-    print(a_list)
-    select_sort(a_list)
-    print(a_list)
+    list1 = [4, 88, 1, 2, 0, 78]
+    print(list1)
+    insert_sort(list1)
+    print(list1)
