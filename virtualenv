@@ -1,0 +1,27 @@
+# 如何创建虚拟环境
+1.安装包管理工具
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+
+2.创建目录用来存放虚拟环境
+mkdir $HOME/.virtualenvs
+
+3.打开~/.bashrc文件，并添加如下：
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+3.运行
+source ~/.bashrc
+
+在python3中，创建虚拟环境
+
+mkvirtualenv -p python3 虚拟环境名称
+
+例 ：
+mkvirtualenv -p python3 py3_flask
+
+在虚拟环境使用以下命令将当前虚拟环境中的依赖包以版本号生成至文件中：
+pip freeze > requirements.txt
+
+当需要创建这个虚拟环境的完全副本，可以创建一个新的虚拟环境，并在其上运行以下命令：
+pip install -r requirements.txt
