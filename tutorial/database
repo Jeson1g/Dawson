@@ -1,0 +1,3 @@
+一.外键约束
+MySQL通过外键约束来保证表与表之间的数据的完整性和准确性。
+https://www.cnblogs.com/programmer-tlh/p/5782451.html
