@@ -56,6 +56,7 @@ def insert_sort(li):
                 swap(li, i, i - 1)
 
 
+
 if __name__ == '__main__':
     list1 = [4, 88, 1, 2, 0, 78]
     print(list1)
