@@ -32,8 +32,13 @@ def quick_sort(alist, start, end):
     alist[low] = mid
 
     # 对基准元素左边的子序列进行快速排序
-    quick_sort(alist, start, low-1)
+    quick_sort(alist, start, low - 1)
 
     # 对基准元素右边的子序列进行快速排序
-    quick_sort(alist, low+1, end)
+    quick_sort(alist, low + 1, end)
 
+
+if __name__ == '__main__':
+    alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+    sorted_alist = merge_sort(alist)
+    print(sorted_alist)

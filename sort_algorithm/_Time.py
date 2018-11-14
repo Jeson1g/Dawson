@@ -56,6 +56,25 @@ def insert_sort(li):
                 swap(li, i, i - 1)
 
 
+def shell_sort(alist):
+    """希尔排序
+    :param alist:
+    :return:
+    """
+    n = len(alist)
+    # 初始步长
+    gap = n / 2
+    while gap > 0:
+        # 按步长进行插入排序
+        for i in range(gap, n):
+            j = i
+            # 插入排序
+            while j>=gap and alist[j-gap] > alist[j]:
+                alist[j-gap], alist[j] = alist[j], alist[j-gap]
+                j -= gap
+        # 得到新的步长
+        gap = gap / 2
+
 
 if __name__ == '__main__':
     list1 = [4, 88, 1, 2, 0, 78]
