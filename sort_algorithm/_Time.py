@@ -76,8 +76,27 @@ def shell_sort(alist):
         gap = gap / 2
 
 
+def sum_index(list1, target):
+    """Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice
+    :param list1: 列表
+    :param target: 列表中两个数的和
+    :return: 和为target的两个数的索引
+    """
+    n = len(list1)
+    for i in range(n - 1):
+        if list1[i] > target:
+            continue
+        for j in range(i+1, n):
+            if list1[i] + list1[j] == target:
+                print([list1.index(list1[i]), list1.index(list1[j])])
+                break
+    print("Does't exist")
+
 if __name__ == '__main__':
-    list1 = [4, 88, 1, 2, 0, 78]
-    print(list1)
-    insert_sort(list1)
-    print(list1)
+    # list1 = [4, 88, 1, 2, 0, 78]
+    # print(list1)
+    # insert_sort(list1)
+    # print(list1)
+    sum_index([40, 2, 7, 8, 23, 56, 78], 9)
+
