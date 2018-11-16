@@ -1,5 +1,5 @@
 def twoSum(nums, target):
-    """
+    """两数之和 -> hash
     :type nums: List[int]
     :type target: int
     :rtype: List[int]
